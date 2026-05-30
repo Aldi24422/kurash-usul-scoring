@@ -1,0 +1,49 @@
+name: kurash_usul_scoring
+description: Aplikasi penilaian digital real-time untuk Kurash kategori Usul/Seni.
+publish_to: 'none' # Mencegah publish ke pub.dev secara tidak sengaja
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- Firebase Core & Database ---
+  firebase_core: ^3.6.0
+  # Menggunakan Realtime Database (bukan Firestore) untuk update skor kilat
+  firebase_database: ^11.1.0
+
+  # --- State Management ---
+  # Digunakan untuk mengelola data skor antar halaman
+  provider: ^6.1.2
+
+  # --- UI & Utilities ---
+  # Agar font tampilan lebih modern/profesional
+  google_fonts: ^6.3.3
+  # Ikon default iOS style
+  cupertino_icons: ^1.0.8
+  dtd: ^4.0.0
+  flutter_lints: ^6.0.0
+  json_rpc_2: ^4.0.0
+  path: ^1.9.1
+  stack_trace: ^1.12.1
+  url_launcher: ^6.3.2
+  web: ^1.1.1
+  file_picker: ^10.3.0
+  excel: ^4.0.0
+  pdf: ^3.10.4
+  printing: ^5.11.0
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Linter untuk menjaga kerapihan kode standar Flutter
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/

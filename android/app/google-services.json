@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "704080156604",
+    "firebase_url": "https://kurash-usul-scoring-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "kurash-usul-scoring",
+    "storage_bucket": "kurash-usul-scoring.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704080156604:android:9cec73a2dacef0f644fdb9",
+        "android_client_info": {
+          "package_name": "com.example.kurash_usul_scoring"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzOMhkS1oi3bQ6gl6wiFhfHVWvop8Vx0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
