@@ -4,7 +4,7 @@ class AppColors {
   // --- PALET DARI GAMBAR ANDA ---
   static const Color lightMint = Color(0xFFEFFFFB); // Teks / Highlight
   static const Color emerald   = Color(0xFF50D890); // UTAMA: Tombol / Slider / Aksen
-  static const Color steelBlue = Color(0xFF4F98CA); // KEDUA: Variasi Juri / Tombol Reset
+  static const Color steelBlue = Color(0xFF1976D2); // KEDUA: Variasi Juri / Tombol Reset
   static const Color darkGrey  = Color(0xFF272727); // BACKGROUND: Latar TV / Kartu
 
   // --- SEMANTIK (PENGGUNAAN) ---
