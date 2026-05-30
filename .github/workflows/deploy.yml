@@ -1,0 +1,39 @@
+name: Flutter Web Deploy
+
+on:
+  push:
+    branches:
+      - main # Akan berjalan otomatis setiap ada push ke branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    # Memberikan izin untuk push ke repository
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          # Jika Anda menggunakan versi Flutter tertentu, bisa diaktifkan:
+          # flutter-version: '3.22.x'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Build Web
+        # base-href SANGAT PENTING untuk GitHub Pages agar routing tidak rusak
+        run: flutter build web --release --base-href "/kurash-usul-scoring/"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: gh-pages
