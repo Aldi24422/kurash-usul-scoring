@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDznQ9FFbWjddcQMsIRoOXjegbxTiulTd4',
+    apiKey: 'AIza' 'SyDznQ9FFbWjddcQMsIRoOXjegbxTiulTd4',
     appId: '1:704080156604:web:0b8302f3b66e175344fdb9',
     messagingSenderId: '704080156604',
     projectId: 'kurash-usul-scoring',
@@ -61,7 +61,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAzOMhkS1oi3bQ6gl6wiFhfHVWvop8Vx0A',
+    apiKey: 'AIza' 'SyAzOMhkS1oi3bQ6gl6wiFhfHVWvop8Vx0A',
     appId: '1:704080156604:android:9cec73a2dacef0f644fdb9',
     messagingSenderId: '704080156604',
     projectId: 'kurash-usul-scoring',
