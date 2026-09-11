@@ -69,6 +69,37 @@ class _MatchListScreenState extends State<MatchListScreen> {
             ));
   }
 
+  void _showDeleteSingleMatchDialog(String matchId) {
+    showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+              title: const Text("Hapus Pertandingan?"),
+              content: const Text(
+                  "Apakah Anda yakin ingin menghapus data pertandingan ini?"),
+              actions: [
+                TextButton(
+                    onPressed: () => Navigator.pop(ctx),
+                    child: const Text("Batal")),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        foregroundColor: Colors.white),
+                    onPressed: () async {
+                      Navigator.pop(ctx);
+                      await dbRef.child('matches/$matchId').remove();
+                      await dbRef.child('scores/$matchId').remove();
+                      if (mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text("Data berhasil dihapus")));
+                      }
+                    },
+                    child: const Text("Hapus")),
+              ],
+            ));
+  }
+
+
   void _showEditDialog(MatchModel match) {
     final p1Controller = TextEditingController(text: match.participant1);
     final p2Controller = TextEditingController(text: match.participant2);
@@ -474,6 +505,12 @@ class _MatchListScreenState extends State<MatchListScreen> {
                         IconButton(
                           icon: const Icon(Icons.edit, color: Colors.grey),
                           onPressed: () => _showEditDialog(match),
+                        ),
+
+                        // TOMBOL HAPUS
+                        IconButton(
+                          icon: const Icon(Icons.delete, color: Colors.red),
+                          onPressed: () => _showDeleteSingleMatchDialog(match.id),
                         ),
                       ],
                     ),
